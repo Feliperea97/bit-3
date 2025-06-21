@@ -1,0 +1,239 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+
+body {
+  margin: 0;
+
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 300% 300%;
+  animation: fondoAnimado 15s ease infinite;
+  font-family: 'Orbitron', 'Segoe UI', sans-serif;
+  color: #f1f1f1;
+}
+
+
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  background: linear-gradient(90deg, #00ffe7, #1b2b65, #24243e);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0, 255, 255, 0.15);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #00ffe7;
+  text-shadow: 0 0 12px #00ffe7;
+}
+
+header nav a {
+  color: #f0f0f0;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+header nav a:hover {
+  color: #00ffe7;
+  text-shadow: 0 0 8px #00ffe7;
+}
+
+
+main.contenedor {
+  padding: 2rem 5%;
+}
+
+.descripcion-tienda {
+  max-width: 800px;
+  margin: 5rem auto 2rem auto;
+  padding: 1rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #00ffe7;
+  border-radius: 8px;
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.destacados h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.7rem;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7;
+}
+
+.grid-juegos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.juego-card {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.1);
+  text-align: center;
+}
+
+.juego-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+}
+
+.juego-card .img-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.juego-card .img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.juego-card h3 {
+  font-size: 1.2rem;
+  color: #00ffe7;
+  margin-bottom: 0.5rem;
+}
+
+.juego-card p {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  margin: 0.3rem 0;
+}
+
+.juego-card .precio {
+  font-weight: bold;
+  color: #00ffc6;
+  margin-top: 0.5rem;
+}
+
+.juego-card a {
+  margin-top: 0.8rem;
+  background-color: #00ffe7;
+  color: #1a1a1a;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.juego-card a:hover {
+  background-color: #1be7ff;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #aaa;
+}
+
+@media (max-width: 575px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  header nav a {
+    margin: 0.5rem 1rem 0 0;
+    display: inline-block;
+  }
+
+  .descripcion-tienda {
+    margin: 2rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .juego-card h3 {
+    font-size: 1rem;
+  }
+
+  .juego-card p {
+    font-size: 0.85rem;
+  }
+
+  .juego-card a {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.9rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .grid-juegos {
+    gap: 1.25rem;
+  }
+
+  .juego-card img {
+    height: 140px;
+  }
+}
+
+@media (min-width: 768px) {
+  .descripcion-tienda {
+    font-size: 1rem;
+    margin: 3rem auto;
+  }
+
+  .juego-card {
+    padding: 1.25rem;
+  }
+
+  .juego-card img {
+    height: 160px;
+  }
+
+  .juego-card h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  main.contenedor {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .juego-card {
+    padding: 1.5rem;
+  }
+
+  .grid-juegos {
+    gap: 2rem;
+  }
+
+  .descripcion-tienda {
+    font-size: 1.05rem;
+  }
+}

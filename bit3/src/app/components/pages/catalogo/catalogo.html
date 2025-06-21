@@ -1,0 +1,28 @@
+
+<body>
+    <header><h1>PixelGame Store</h1>
+        <app-navigation/>
+    </header>
+    <div class="container my-4">
+  <h2 class="text-center mb-4">🎮 Catálogo de Juegos</h2>
+  <div class="row">
+    @for (juego of catalogo; track $index) {
+      <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="card h-100 shadow-sm">
+          <img [src]="juego.thumbnail" class="card-img-top" [alt]="juego.title" />
+          <div class="card-body text-center">
+            <h5 class="card-title">{{ juego.title }}</h5>
+            <p class="card-text small text-muted">{{ juego.genre }} • {{ juego.platform }}</p>
+            <a [href]="juego.game_url" class="btn btn-primary btn-sm" target="_blank">
+              Ver Juego
+            </a>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+ <footer>
+    <p>&copy; 2025 PixelGame Store. Todos los derechos reservados.</p>
+  </footer>
+</body>
